@@ -7,9 +7,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "babel": "^6.23.0",
+    "babel-plugin-module-alias": "^1.6.0",
     "react": "16.0.0-alpha.6",
     "react-native": "0.44.0",
     "react-native-device-info": "^0.11.0",
+    "react-native-redux-boot": "github:afeiship/react-native-redux-boot",
+    "react-native-splash-screen": "github:afeiship/react-native-splash-screen",
     "react-native-vector-icons": "^4.3.0",
     "react-navigation": "^1.0.0-beta.11"
   },

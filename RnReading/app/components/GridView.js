@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { View, StyleSheet, ListView, ViewPropTypes } from 'react-native';
+import React, {PropTypes} from 'react';
+import {View, StyleSheet, ListView, ViewPropTypes} from 'react-native';
 
 const propTypes = {
   items: PropTypes.array,

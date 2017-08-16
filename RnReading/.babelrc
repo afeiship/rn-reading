@@ -1,3 +1,18 @@
 {
-  "presets": ["react-native"]
+  "presets": [
+    "react-native"
+  ],
+  "plugins": [
+    [
+      "module-alias",
+      [
+        {
+          "app": "./app",
+          "assets": "./app/assets",
+          "components": "./app/components",
+          "images": "./app/assets/images"
+        }
+      ]
+    ]
+  ]
 }

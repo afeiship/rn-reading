@@ -1,4 +1,4 @@
-import {AppRegistry} from 'react-native';
-import Root from './app/entry';
+import {ReduxBoot} from 'react-native-redux-boot';
+import RnReading from './app/index';
 
-AppRegistry.registerComponent('RnReading', () => Root);
+ReduxBoot.run(RnReading, 'RnReading');

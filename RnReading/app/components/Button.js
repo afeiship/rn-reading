@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { ViewPropTypes, Text, TouchableOpacity } from 'react-native';
+import React, {PropTypes} from 'react';
+import {ViewPropTypes, Text, TouchableOpacity} from 'react-native';
 
 const propTypes = {
   onPress: PropTypes.func,
@@ -32,7 +32,8 @@ const Button = ({
 Button.propTypes = propTypes;
 
 Button.defaultProps = {
-  onPress() {},
+  onPress() {
+  },
   disabled: false,
   activeOpacity: 0.8
 };

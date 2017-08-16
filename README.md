@@ -8,3 +8,7 @@
     "react-native": "0.44.3"
 }
 ```
+
+## resources:
++ https://reactnavigation.org/
++ https://facebook.github.io/react-native/

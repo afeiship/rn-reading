@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { ViewPropTypes, Image, TouchableOpacity } from 'react-native';
+import React, {PropTypes} from 'react';
+import {ViewPropTypes, Image, TouchableOpacity} from 'react-native';
 
 const propTypes = {
   onPress: PropTypes.func,
@@ -9,19 +9,20 @@ const propTypes = {
   containerStyle: ViewPropTypes.style
 };
 
-const ImageButton = ({ onPress, disabled, source, style, containerStyle }) =>
+const ImageButton = ({onPress, disabled, source, style, containerStyle}) =>
   (<TouchableOpacity
     style={containerStyle}
     onPress={onPress}
     disabled={disabled}
   >
-    <Image style={style} source={source} />
+    <Image style={style} source={source}/>
   </TouchableOpacity>);
 
 ImageButton.propTypes = propTypes;
 
 ImageButton.defaultProps = {
-  onPress() {},
+  onPress() {
+  },
   disabled: false
 };
 
