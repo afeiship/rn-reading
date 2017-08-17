@@ -118,7 +118,9 @@ export default class extends React.Component {
   };
 
   _onRefresh = e => {
-    this.init();
+    this.setState({refreshing: false}, () => {
+      this.init();
+    });
   };
 
   render() {
@@ -137,7 +139,7 @@ export default class extends React.Component {
           <Swiper>
             {
               images.map((uri, index) => {
-                return <Image style={[SK.wp10, {width: 375, height: '100%'}]} source={{uri}} key={index}/>
+                return <Image style={[SK.wp10, {width: '100%', height: '100%'}]} source={{uri}} key={index}/>
               })
             }
           </Swiper>

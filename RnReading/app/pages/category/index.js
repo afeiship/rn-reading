@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
     height:60,
     backgroundColor:'#fff',
     padding:10,
-    borderRadius:5,
     borderWidth:1,
     borderColor:'#eee'
   }
@@ -63,7 +62,7 @@ export default class extends React.Component {
             return (
               <TouchableOpacity key={index} style={[{paddingLeft: 3}, styles.item]}>
                 <View style={[row.$, row.center, SK.pl10, { height:'100%'}]}>
-                  <Icon name="md-star-outline" size={12} color='#999' />
+                  <Icon name="md-star-outline" size={16} color='#F60' />
                   <View style={[ SK.ml10 ]}><Text>{item.name}</Text></View>
                 </View>
               </TouchableOpacity>
