@@ -13,3 +13,7 @@
 + https://reactnavigation.org/
 + https://facebook.github.io/react-native/
 + https://github.com/felixge/node-dateformat
+
+## icons:
++ https://github.com/oblador/react-native-vector-icons
++ http://zavoloklom.github.io/material-design-iconic-font/cheatsheet.html

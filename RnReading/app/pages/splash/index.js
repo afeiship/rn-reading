@@ -16,7 +16,7 @@ class Splash extends React.Component {
 
   render() {
     return (
-      <RnSplash onLoad={this._onLoad} duration={{stand:0, move: 0}}>
+      <RnSplash onLoad={this._onLoad} duration={{ move: 0 }}>
         <Image source={splashImg} style={{width: 375, height: 667}}/>
       </RnSplash>
     );
