@@ -5,13 +5,14 @@ import RnSplash from 'react-native-splash-screen';
 import splashImg from 'images/splash.jpg';
 
 
-class Splash extends React.Component {
+export default class extends React.Component {
   static navigationOptions = {
     header: null
   };
 
   _onLoad = e => {
     NavigationUtil.reset(this.props.navigation, 'Home');
+
   };
 
   render() {
@@ -22,5 +23,3 @@ class Splash extends React.Component {
     );
   }
 }
-
-export default Splash;

@@ -118,8 +118,10 @@ export default class extends React.Component {
   };
 
   _onRefresh = e => {
-    this.setState({refreshing: false}, () => {
-      this.init();
+    this.setState({refreshing: true}, () => {
+      setTimeout(()=>{
+        this.init();
+      },1000)
     });
   };
 
