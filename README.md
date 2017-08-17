@@ -12,3 +12,4 @@
 ## resources:
 + https://reactnavigation.org/
 + https://facebook.github.io/react-native/
++ https://github.com/felixge/node-dateformat

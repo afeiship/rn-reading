@@ -9,6 +9,7 @@
   "dependencies": {
     "babel": "^6.23.0",
     "babel-plugin-module-alias": "^1.6.0",
+    "dateformat": "^2.0.0",
     "next-js-core2": "github:afeiship/next-js-core2",
     "next-param": "github:afeiship/next-param",
     "react": "16.0.0-alpha.6",
@@ -16,8 +17,11 @@
     "react-native-device-info": "^0.11.0",
     "react-native-redux-boot": "github:afeiship/react-native-redux-boot",
     "react-native-splash-screen": "github:afeiship/react-native-splash-screen",
+    "react-native-stylekit": "github:afeiship/react-native-stylekit",
+    "react-native-styles-flexbox-grid": "github:afeiship/react-native-styles-flexbox-grid",
     "react-native-vector-icons": "^4.3.0",
-    "react-navigation": "^1.0.0-beta.11"
+    "react-navigation": "^1.0.0-beta.11",
+    "timeago": "github:afeiship/timeago"
   },
   "devDependencies": {
     "babel-jest": "20.0.3",

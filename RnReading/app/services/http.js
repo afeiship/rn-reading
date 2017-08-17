@@ -2,9 +2,10 @@ import Config from './config';
 import nx from 'next-js-core2';
 import 'next-param';
 
+
 export default class {
   static post(inName, inData) {
-    //TODO: optmize
+    //TODO: abstract next-showapi module
     const data = Object.assign({
       showapi_appid: '44181',
       showapi_sign: '9a0d1bf2bbe845bca4fa811c8579148f'
