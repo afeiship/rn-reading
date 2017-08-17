@@ -7,10 +7,24 @@
       "module-alias",
       [
         {
-          "app": "./app",
-          "assets": "./app/assets",
-          "components": "./app/components",
-          "images": "./app/assets/images"
+          "src": "./app",
+          "expose": "app"
+        },
+        {
+          "src": "./app/assets",
+          "expose": "assets"
+        },
+        {
+          "src": "./app/components",
+          "expose": "components"
+        },
+        {
+          "src": "./app/assets/images",
+          "expose": "images"
+        },
+        {
+          "src": "./app/services",
+          "expose": "services"
         }
       ]
     ]
