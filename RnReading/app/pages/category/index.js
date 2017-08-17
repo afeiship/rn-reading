@@ -7,7 +7,6 @@ import SK from 'react-native-stylekit';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
-
 const styles = StyleSheet.create({
   cRed: {
     borderWidth: 1,

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, View, Image, Text, FlatList, StyleSheet, StatusBar,TouchableOpacity} from 'react-native';
+import {Button, View, Image, Text, FlatList, StyleSheet, StatusBar, TouchableOpacity} from 'react-native';
 import {row, col, box} from 'react-native-styles-flexbox-grid';
 import dateFormat from 'dateformat';
 import SK from 'react-native-stylekit';
@@ -40,9 +40,7 @@ const styles = StyleSheet.create({
   right: {
     width: 100
   },
-  footer: {
-
-  }
+  footer: {}
 });
 
 
@@ -80,21 +78,27 @@ export default class extends React.Component {
     });
   }
 
+  _onItemPress = inItem => {
+    const {navigate} = this.props.navigation;
+    navigate('Web', {item: inItem});
+  };
+
   _keyExtractor = (item, index) => item.id;
 
   _renderItem = ({item}) => {
+
     return (
-      <TouchableOpacity style={[row.$, row.center, styles.item]}>
+      <TouchableOpacity style={[row.$, row.center, styles.item]} onPress={this._onItemPress.bind(this, item)}>
 
         <View style={[styles.left]}>
           <View style={[row.$, box.vertical, row.justifyBetween, {height: '100%'}]}>
             <View style={[]}>
               <Text style={[SK.f16]}>{item.title}</Text>
             </View>
-            <View style={[row.justifyBetween, row.center, box.horizontal, styles.footer ]}>
+            <View style={[row.justifyBetween, row.center, box.horizontal, styles.footer]}>
               <Text style={[SK.f12, SK.c_9]}>
                 <Icon name="md-bookmark" size={14} color='#999'/>
-                <Text style={[{ marginLeft: 3 }]}>{item.typeName}</Text>
+                <Text style={[{marginLeft: 3}]}>{item.typeName}</Text>
               </Text>
               <Text style={[SK.f12, SK.c_6]}>
                 <Icon name="md-time" size={12} color='#999' iconStyle={{paddingLeft: 3}}>
