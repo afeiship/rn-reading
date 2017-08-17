@@ -1,57 +1,81 @@
 import React from 'react';
-import {StyleSheet, Image, Text, Linking, View} from 'react-native';
-
+import {StyleSheet, Image,  Linking, View} from 'react-native';
+import { Container, Header, Thumbnail, Content,Button, List, ListItem, Text,Separator, Icon, Left, Body, Right, Switch } from 'native-base';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 import DeviceInfo from 'react-native-device-info';
-import Icon from 'react-native-vector-icons/Ionicons';
-import Button from '../../components/Button';
 
 const SHOW_API = 'https://www.showapi.com';
 const READING_REPO = 'https://github.com/attentiveness/reading';
 
 const aboutLogo = require('../../img/about_logo.png');
 
-class About extends React.Component {
+export default class extends React.Component {
   static navigationOptions = {
     title: '关于',
-    tabBarIcon: ({tintColor}) =>
-      <Icon name="md-information-circle" size={25} color={tintColor}/>,
-    headerRight: (
-      <Icon.Button
-        name="logo-github"
-        backgroundColor="transparent"
-        underlayColor="transparent"
-        activeOpacity={0.8}
-        onPress={() => Linking.openURL(READING_REPO)}
-      />
-    )
+    tabBarIcon: ({ tintColor }) =>{
+      return <Ionicon name="md-information-circle" size={25} color={tintColor} />
+    }
   };
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.content}>
-          <View style={styles.center}>
-            <Image style={styles.logo} source={aboutLogo}/>
-            <Text style={styles.version}>
-              {`v${DeviceInfo.getVersion()}`}
-            </Text>
-            <Text style={styles.title}>iReading</Text>
-            <Text style={styles.subtitle}>让生活更精彩</Text>
-          </View>
-          <View style={styles.bottomContainer}>
-            <View style={styles.disclaimerContent}>
-              <Text style={[styles.disclaimer, {color: '#999999'}]}>
-                免责声明：所有内容均来自:
-              </Text>
-              <Button
-                style={[styles.disclaimer, {color: '#3e9ce9'}]}
-                text={SHOW_API}
-                onPress={() => this.onPress(SHOW_API)}
-              />
-            </View>
-          </View>
-        </View>
-      </View>
+      <Container style={{ backgroundColor:'#fff'}}>
+        <Content>
+          <List>
+            <ListItem>
+              <Thumbnail circle size={80} source={{ uri: 'http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg' }} />
+              <Body>
+              <Text>afeiship</Text>
+              <Text note>Its time to build an app.</Text>
+              </Body>
+              <Right>
+                <Button transparent onPress={() => this.props.navigation.goBack()}>
+                  <Ionicon name="ios-code" size={40} />
+                </Button>
+              </Right>
+            </ListItem>
+
+            <Separator bordered>
+              <Text>基本设置</Text>
+            </Separator>
+            <ListItem icon>
+              <Left>
+                <Icon name="plane" />
+              </Left>
+              <Body>
+              <Text>Airplane Mode</Text>
+              </Body>
+              <Right>
+                <Switch value={false} />
+              </Right>
+            </ListItem>
+            <ListItem icon>
+              <Left>
+                <Icon name="wifi" />
+              </Left>
+              <Body>
+              <Text>Wi-Fi</Text>
+              </Body>
+              <Right>
+                <Text>GeekyAnts</Text>
+                <Icon name="arrow-forward" />
+              </Right>
+            </ListItem>
+            <ListItem icon>
+              <Left>
+                <Icon name="bluetooth" />
+              </Left>
+              <Body>
+              <Text>Bluetooth</Text>
+              </Body>
+              <Right>
+                <Text>On</Text>
+                <Icon name="arrow-forward" />
+              </Right>
+            </ListItem>
+          </List>
+        </Content>
+      </Container>
     );
   }
 }
@@ -104,5 +128,3 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   }
 });
-
-export default About;
