@@ -1,9 +1,24 @@
 import React from 'react';
-import {StyleSheet, Image,  Linking, View} from 'react-native';
-import { Container, Header, Thumbnail, Content,Button, List, ListItem, Text,Separator, Icon, Left, Body, Right, Switch } from 'native-base';
+import {StyleSheet, Image, Linking, View} from 'react-native';
+import {
+  Container,
+  Header,
+  Thumbnail,
+  Content,
+  Button,
+  List,
+  ListItem,
+  Text,
+  Separator,
+  Icon,
+  Left,
+  Body,
+  Right,
+  Switch
+} from 'native-base';
 import Ionicon from 'react-native-vector-icons/Ionicons';
 import DeviceInfo from 'react-native-device-info';
-
+import SK from 'react-native-stylekit';
 const SHOW_API = 'https://www.showapi.com';
 const READING_REPO = 'https://github.com/attentiveness/reading';
 
@@ -12,25 +27,31 @@ const aboutLogo = require('../../img/about_logo.png');
 export default class extends React.Component {
   static navigationOptions = {
     title: '关于',
-    tabBarIcon: ({ tintColor }) =>{
-      return <Ionicon name="md-information-circle" size={25} color={tintColor} />
+    tabBarIcon: ({tintColor}) => {
+      return <Ionicon name="md-information-circle" size={25} color={tintColor}/>
     }
+  };
+
+  _toLogin = e => {
+    const {navigate} = this.props.navigation;
+    navigate('login');
   };
 
   render() {
     return (
-      <Container style={{ backgroundColor:'#fff'}}>
+      <Container style={{backgroundColor: '#fff'}}>
         <Content>
           <List>
             <ListItem>
-              <Thumbnail circle size={80} source={{ uri: 'http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg' }} />
+              <Thumbnail circle size={80}
+                         source={{uri: 'http://himg.bdimg.com/sys/portrait/item/be10475f686d6c73db00.jpg'}}/>
               <Body>
               <Text>afeiship</Text>
               <Text note>Its time to build an app.</Text>
               </Body>
               <Right>
                 <Button transparent onPress={() => this.props.navigation.goBack()}>
-                  <Ionicon name="ios-code" size={40} />
+                  <Ionicon name="ios-code" size={40}/>
                 </Button>
               </Right>
             </ListItem>
@@ -40,39 +61,42 @@ export default class extends React.Component {
             </Separator>
             <ListItem icon>
               <Left>
-                <Icon name="plane" />
+                <Icon name="plane"/>
               </Left>
               <Body>
               <Text>Airplane Mode</Text>
               </Body>
               <Right>
-                <Switch value={false} />
+                <Switch value={false}/>
               </Right>
             </ListItem>
             <ListItem icon>
               <Left>
-                <Icon name="wifi" />
+                <Icon name="wifi"/>
               </Left>
               <Body>
               <Text>Wi-Fi</Text>
               </Body>
               <Right>
                 <Text>GeekyAnts</Text>
-                <Icon name="arrow-forward" />
+                <Icon name="arrow-forward"/>
               </Right>
             </ListItem>
             <ListItem icon>
               <Left>
-                <Icon name="bluetooth" />
+                <Icon name="bluetooth"/>
               </Left>
               <Body>
               <Text>Bluetooth</Text>
               </Body>
               <Right>
                 <Text>On</Text>
-                <Icon name="arrow-forward" />
+                <Icon name="arrow-forward"/>
               </Right>
             </ListItem>
+            <Button primary block style={[SK.m10]} onPress={this._toLogin}>
+              <Text>To Login Page</Text>
+            </Button>
           </List>
         </Content>
       </Container>

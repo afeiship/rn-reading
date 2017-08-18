@@ -6,6 +6,7 @@ import WebViewPage from '../pages/detail/index';
 import Feedback from '../pages/feedback/index';
 import About from '../pages/about/index';
 import Gallery from '../pages/gallery/index';
+import Login from '../pages/login/index';
 
 const TabContainer = TabNavigator(
   {
@@ -50,7 +51,8 @@ const App = StackNavigator(
       }
     },
     Web: {screen: WebViewPage},
-    gallery: { screen: Gallery}
+    gallery: { screen: Gallery},
+    login: { screen: Login}
   },
   {
     headerMode: 'screen',

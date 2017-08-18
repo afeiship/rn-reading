@@ -28,10 +28,10 @@ const styles = StyleSheet.create({
     marginBottom: 5
   },
   top: {
-    height: 188
+    height: 118
   },
   bottom: {
-    height: 368
+    height: 438
   },
   left: {
     width: 255,
@@ -55,9 +55,14 @@ export default class extends React.Component {
       refreshing: true,
       items: [],
       images: [
-        'http://img01.sogoucdn.com/app/a/100520091/20170817110102',
-        'http://img03.sogoucdn.com/app/a/100520091/20170817105910',
-        'http://img03.sogoucdn.com/app/a/100520091/20170817110225'
+        'https://gw.alicdn.com/imgextra/i4/185/TB2kUGlaxOGJuJjSZFhXXav4VXa_!!185-0-luban.jpg_q50.jpg',
+        'https://aecpm.alicdn.com/simba/img/TB1CWf9KpXXXXbuXpXXSutbFXXX.jpg_q50.jpg',
+        'https://aecpm.alicdn.com/simba/img/TB14ab1KpXXXXclXFXXSutbFXXX.jpg_q50.jpg',
+        'https://img.alicdn.com/imgextra/i1/61/TB2I8oQXlfkJKJjSspeXXbgPFXa_!!61-0-luban.jpg_q50.jpg',
+        'https://img.alicdn.com/imgextra/i1/53/TB2WKhEahWGJuJjSZFMXXauRFXa_!!53-0-luban.jpg_q50.jpg',
+        'https://gw.alicdn.com/imgextra/i1/169/TB2Ii.lXpZZJ1JjSZFEXXXUlXXa_!!169-0-luban.jpg_q50.jpg',
+        'https://gw.alicdn.com/imgextra/i3/126/TB251VBXNuGJuJjSZPiXXcqOpXa_!!126-0-luban.jpg_q50.jpg',
+        'https://gw.alicdn.com/imgextra/i3/32/TB2oIzUXBjkJKJjSspfXXc2tXXa_!!32-0-luban.jpg_q50.jpg'
       ]
     }
   }
@@ -119,15 +124,15 @@ export default class extends React.Component {
 
   _onRefresh = e => {
     this.setState({refreshing: true}, () => {
-      setTimeout(()=>{
+      setTimeout(() => {
         this.init();
-      },1000)
+      }, 1000)
     });
   };
 
   _showGallery = uri => {
     const {navigate} = this.props.navigation;
-    navigate('gallery',{ uri});
+    navigate('gallery', {uri});
     // alert('show gallery!')
   };
 
@@ -148,8 +153,8 @@ export default class extends React.Component {
             {
               images.map((uri, index) => {
                 return (
-                  <TouchableOpacity onPress={this._showGallery.bind(this,uri)} key={index}>
-                    <Image style={[SK.wp10, {width: '100%', height: '100%'}]} source={{uri}} />
+                  <TouchableOpacity onPress={this._showGallery.bind(this, uri)} key={index}>
+                    <Image style={[{width: 375, height: 118}]} source={{uri}}/>
                   </TouchableOpacity>
                 )
               })
