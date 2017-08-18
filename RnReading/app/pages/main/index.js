@@ -149,7 +149,13 @@ export default class extends React.Component {
           barStyle="light-content"
         />
         <View style={[styles.top]}>
-          <Swiper>
+          <Swiper
+            dot={<View style={{backgroundColor: '#FFF', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />}
+            activeDot={<View style={{backgroundColor: '#F60', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />}
+            paginationStyle={{
+            position:'absolute',
+            bottom:3
+          }}>
             {
               images.map((uri, index) => {
                 return (
