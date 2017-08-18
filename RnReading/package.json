@@ -10,11 +10,11 @@
     "babel": "^6.23.0",
     "babel-plugin-module-alias": "^1.6.0",
     "dateformat": "^2.0.0",
-    "native-base": "2.2.0",
+    "native-base": "^2.3.1",
     "next-js-core2": "github:afeiship/next-js-core2",
     "next-param": "github:afeiship/next-param",
-    "react": "16.0.0-alpha.6",
-    "react-native": "0.44.0",
+    "react": "16.0.0-alpha.12",
+    "react-native": "0.47.1",
     "react-native-device-info": "^0.11.0",
     "react-native-redux-boot": "github:afeiship/react-native-redux-boot",
     "react-native-splash-screen": "github:afeiship/react-native-splash-screen",
@@ -22,14 +22,15 @@
     "react-native-styles-flexbox-grid": "github:afeiship/react-native-styles-flexbox-grid",
     "react-native-swiper": "^1.5.10",
     "react-native-vector-icons": "^4.3.0",
+    "react-native-wechat": "^1.9.9",
     "react-navigation": "^1.0.0-beta.11",
     "timeago": "github:afeiship/timeago"
   },
   "devDependencies": {
-    "babel-jest": "20.0.3",
     "babel-preset-react-native": "2.1.0",
+    "babel-jest": "20.0.3",
     "jest": "20.0.4",
-    "react-test-renderer": "16.0.0-alpha.6"
+    "react-test-renderer": "16.0.0-alpha.12"
   },
   "jest": {
     "preset": "react-native"

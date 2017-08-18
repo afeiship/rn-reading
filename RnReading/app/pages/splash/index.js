@@ -3,6 +3,7 @@ import {Dimensions, Image, Animated, Alert} from 'react-native';
 import NavigationUtil from '../../utils/NavigationUtil';
 import RnSplash from 'react-native-splash-screen';
 import splashImg from 'images/splash.jpg';
+import * as WeChat from 'react-native-wechat';
 
 
 export default class extends React.Component {
@@ -12,7 +13,7 @@ export default class extends React.Component {
 
   _onLoad = e => {
     NavigationUtil.reset(this.props.navigation, 'Home');
-
+    alert(WeChat);
   };
 
   render() {
