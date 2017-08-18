@@ -125,6 +125,12 @@ export default class extends React.Component {
     });
   };
 
+  _showGallery = uri => {
+    const {navigate} = this.props.navigation;
+    navigate('gallery',{ uri});
+    // alert('show gallery!')
+  };
+
   render() {
     const {navigate} = this.props.navigation;
     const {images} = this.state;
@@ -141,7 +147,11 @@ export default class extends React.Component {
           <Swiper>
             {
               images.map((uri, index) => {
-                return <Image style={[SK.wp10, {width: '100%', height: '100%'}]} source={{uri}} key={index}/>
+                return (
+                  <TouchableOpacity onPress={this._showGallery.bind(this,uri)} key={index}>
+                    <Image style={[SK.wp10, {width: '100%', height: '100%'}]} source={{uri}} />
+                  </TouchableOpacity>
+                )
               })
             }
           </Swiper>

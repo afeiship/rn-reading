@@ -1,6 +1,8 @@
 import React from 'react';
 import {StyleSheet, TextInput, View, Keyboard} from 'react-native';
+import {Container, Header, Content, Button, Text} from 'native-base';
 
+import SK from 'react-native-stylekit';
 import DeviceInfo from 'react-native-device-info';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ToastUtil from '../../utils/ToastUtil';
@@ -10,19 +12,9 @@ let feedbackText;
 export default class extends React.Component {
   static navigationOptions = ({navigation}) => ({
     title: '建议',
-    tabBarIcon: ({tintColor}) =>
-      <Icon name="md-thumbs-up" size={25} color={tintColor}/>,
-    headerRight: (
-      <Icon.Button
-        name="md-checkmark"
-        backgroundColor="transparent"
-        underlayColor="transparent"
-        activeOpacity={0.8}
-        onPress={() => {
-          navigation.state.params.handleCheck();
-        }}
-      />
-    )
+    tabBarIcon: ({tintColor}) => {
+      return <Icon name="md-thumbs-up" size={25} color={tintColor}/>
+    }
   });
 
   componentDidMount() {
@@ -50,23 +42,31 @@ export default class extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <TextInput
-          ref={(ref) => {
-            this.textInput = ref;
-          }}
-          style={styles.textInput}
-          placeholder="请写下您宝贵的意见或建议，与iReading一起进步！"
-          placeholderTextColor="#aaaaaa"
-          underlineColorAndroid="transparent"
-          numberOfLines={200}
-          multiline
-          autoFocus
-          onChangeText={(text) => {
-            feedbackText = text;
-          }}
-        />
-      </View>
+      <Container>
+        <Content style={[SK.p10, SK.bg_f]}>
+          <TextInput
+            ref={(ref) => {
+              this.textInput = ref;
+            }}
+            style={[styles.textInput]}
+            placeholder="请写下您宝贵的意见或建议，与iReading一起进步！"
+            placeholderTextColor="#aaaaaa"
+            underlineColorAndroid="transparent"
+            numberOfLines={200}
+            multiline
+            autoFocus
+            onChangeText={(text) => {
+              feedbackText = text;
+            }}
+          />
+          <Button primary block>
+            <Text> 提交 </Text>
+          </Button>
+          <Text style={[SK.c_9,SK.f14,SK.mt10,SK.tl]}>
+            您可以想说啥就说啥
+          </Text>
+        </Content>
+      </Container>
     );
   }
 }
@@ -78,9 +78,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   textInput: {
-    flex: 1,
-    fontSize: 18,
-    padding: 15,
-    textAlignVertical: 'top'
+    height: 300,
+    fontSize: 16
   }
 });

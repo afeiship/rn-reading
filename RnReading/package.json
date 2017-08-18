@@ -16,6 +16,7 @@
     "react": "16.0.0-alpha.12",
     "react-native": "0.47.1",
     "react-native-device-info": "^0.11.0",
+    "react-native-photo-view": "^1.4.0",
     "react-native-redux-boot": "github:afeiship/react-native-redux-boot",
     "react-native-splash-screen": "github:afeiship/react-native-splash-screen",
     "react-native-stylekit": "github:afeiship/react-native-stylekit",
