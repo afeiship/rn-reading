@@ -4,6 +4,7 @@ import NavigationUtil from '../../utils/NavigationUtil';
 import RnSplash from 'react-native-splash-screen';
 import splashImg from 'images/splash.jpg';
 import * as WeChat from 'react-native-wechat';
+import $config from 'services/config';
 
 
 export default class extends React.Component {
@@ -13,7 +14,7 @@ export default class extends React.Component {
 
   _onLoad = e => {
     NavigationUtil.reset(this.props.navigation, 'Home');
-    alert(WeChat);
+    WeChat.registerApp($config.WX_APP_ID);
   };
 
   render() {
