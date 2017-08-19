@@ -7,7 +7,7 @@ export default class extends ReduxAppBase {
   static initialState() {
     return {
       memory: {
-        test: 100,
+        navigation: null
       }
     }
   }

@@ -11,6 +11,7 @@
     "babel-plugin-module-alias": "^1.6.0",
     "dateformat": "^2.0.0",
     "native-base": "^2.3.1",
+    "next-debug": "github:afeiship/next-debug",
     "next-js-core2": "github:afeiship/next-js-core2",
     "next-param": "github:afeiship/next-param",
     "react": "16.0.0-alpha.12",

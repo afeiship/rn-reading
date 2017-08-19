@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import $http from 'services/http';
 import Swiper from 'react-native-swiper';
+import NxDebug from 'next-debug';
 
 const styles = StyleSheet.create({
   cRed: {
@@ -44,7 +45,8 @@ const styles = StyleSheet.create({
 });
 
 
-export default class extends React.Component {
+export default class extends React.PureComponent {
+
   static navigationOptions = {
     title: 'Main',
   };
@@ -85,6 +87,11 @@ export default class extends React.Component {
 
   _onItemPress = inItem => {
     const {navigate} = this.props.navigation;
+
+    NxDebug.alert(
+      'navigate:',
+      navigate
+    );
     navigate('Web', {item: inItem});
   };
 
@@ -154,7 +161,7 @@ export default class extends React.Component {
             activeDot={<View style={{backgroundColor: '#F60', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />}
             paginationStyle={{
             position:'absolute',
-            bottom:3
+            bottom:5
           }}>
             {
               images.map((uri, index) => {
