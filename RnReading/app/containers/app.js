@@ -18,6 +18,7 @@ const TabContainer = TabNavigator(
   {
     lazy: true,
     tabBarPosition: 'bottom',
+    headerMode: 'screen',
     tabBarOptions: {
       activeTintColor: '#122432',
       inactiveTintColor: '#999999',
@@ -55,7 +56,6 @@ const App = StackNavigator(
     login: { screen: Login}
   },
   {
-    headerMode: 'screen',
     navigationOptions: {
       headerStyle: {
         backgroundColor: '#122432'
