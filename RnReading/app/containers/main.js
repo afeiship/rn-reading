@@ -8,7 +8,7 @@ export default class extends React.Component {
     title: '首页',
     tabBarIcon: ({tintColor}) =>{
       return (
-        <View style={{ position:'absolute', top:-10 , borderWidth:1, borderColor:'#f00',backgroundColor:'#eee'}}>
+        <View>
           <Icon name="md-home" size={25} color={tintColor}/>
         </View>
       );

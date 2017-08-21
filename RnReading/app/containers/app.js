@@ -7,17 +7,21 @@ import Feedback from '../pages/feedback/index';
 import About from '../pages/about/index';
 import Gallery from '../pages/gallery/index';
 import Login from '../pages/login/index';
+import Customize from '../pages/customize/index';
+import TabAdd from 'components/tab-add';
 
 const TabContainer = TabNavigator(
   {
     Main: {screen: MainContainer},
     Category: {screen: CategoryContainer},
+    Customize: {screen: Customize},
     Feedback: {screen: Feedback},
     About: {screen: About}
   },
   {
     lazy: true,
     tabBarPosition: 'bottom',
+    tabBarComponent: TabAdd,
     headerMode: 'screen',
     tabBarOptions: {
       activeTintColor: '#122432',
@@ -52,8 +56,8 @@ const App = StackNavigator(
       }
     },
     Web: {screen: WebViewPage},
-    gallery: { screen: Gallery},
-    login: { screen: Login}
+    gallery: {screen: Gallery},
+    login: {screen: Login}
   },
   {
     navigationOptions: {

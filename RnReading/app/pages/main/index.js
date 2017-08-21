@@ -9,6 +9,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import $http from 'services/http';
 import Swiper from 'react-native-swiper';
 import NxDebug from 'next-debug';
+import {TabView} from 'react-navigation';
+import TabAdd from 'components/tab-add';
 
 const styles = StyleSheet.create({
   cRed: {
@@ -48,7 +50,7 @@ const styles = StyleSheet.create({
 export default class extends React.PureComponent {
 
   static navigationOptions = {
-    title: 'Main',
+    title: 'Main'
   };
 
   constructor(props) {
@@ -157,12 +159,30 @@ export default class extends React.PureComponent {
         />
         <View style={[styles.top]}>
           <Swiper
-            dot={<View style={{backgroundColor: '#FFF', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />}
-            activeDot={<View style={{backgroundColor: '#F60', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3,}} />}
+            dot={<View style={{
+              backgroundColor: '#FFF',
+              width: 8,
+              height: 8,
+              borderRadius: 4,
+              marginLeft: 3,
+              marginRight: 3,
+              marginTop: 3,
+              marginBottom: 3,
+            }}/>}
+            activeDot={<View style={{
+              backgroundColor: '#F60',
+              width: 8,
+              height: 8,
+              borderRadius: 4,
+              marginLeft: 3,
+              marginRight: 3,
+              marginTop: 3,
+              marginBottom: 3,
+            }}/>}
             paginationStyle={{
-            position:'absolute',
-            bottom:5
-          }}>
+              position: 'absolute',
+              bottom: 5
+            }}>
             {
               images.map((uri, index) => {
                 return (
